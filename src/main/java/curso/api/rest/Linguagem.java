@@ -1,6 +1,8 @@
 package curso.api.rest;
 
 import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 
 import jakarta.persistence.Entity;
 
@@ -8,34 +10,53 @@ import jakarta.persistence.Entity;
 public class Linguagem {
 	
     @Id
-    private String id;
+    private Long id;
     
-    private String title;
-    private String image;
+    private String nome;
+    private String urlImage;
     private int ranking;
 
     public Linguagem() {
 
     }
 
-    public Linguagem(String title, String image, int ranking) {
-        this.title = title;
-        this.image = image;
+    public Linguagem(String nome, String urlImage, int ranking) {
+        this.nome = nome;
+        this.urlImage = urlImage;
         this.ranking = ranking;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getNome() {
+        return nome;
     }
-    public String getImage() {
-        return image;
-    }
+
     public int getRanking() {
         return ranking;
     }
+
+	public String getUrlImage() {
+		return urlImage;
+	}
+
+	public void setUrlImage(String urlImage) {
+		this.urlImage = urlImage;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setRanking(int ranking) {
+		this.ranking = ranking;
+	}
 	
+    
 }

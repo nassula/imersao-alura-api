@@ -5,8 +5,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
@@ -22,10 +25,21 @@ public class LinguagemController {
         return linguagens;
     }
 
-    @PostMapping("/linguagens")
+    @PostMapping("/linguagem")
     public Linguagem cadastrarLinguagem(@RequestBody Linguagem linguagem) {
         Linguagem linguagemSalva = repositorio.save(linguagem);
         return linguagemSalva;
-    } 
+    }
+    
+    @PutMapping("/linguagem")
+    public Linguagem atualizarLinguagem(@RequestBody Linguagem linguagem) {
+        Linguagem linguagemSalva = repositorio.save(linguagem);
+        return linguagemSalva;
+    }
+    
+    @DeleteMapping(value = "/linguagem/{id}", produces = "application/text")
+    public void apagarLinguagemNome(@PathVariable(value = "id") String id) {
+        repositorio.deleteById(id);
+    }
 
 }
