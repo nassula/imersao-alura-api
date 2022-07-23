@@ -25,19 +25,19 @@ public class LinguagemController {
         return linguagens;
     }
 
-    @PostMapping("/linguagem")
+    @PostMapping("/linguagens")
     public Linguagem cadastrarLinguagem(@RequestBody Linguagem linguagem) {
         Linguagem linguagemSalva = repositorio.save(linguagem);
         return linguagemSalva;
     }
     
-    @PutMapping("/linguagem")
+    @PutMapping("/linguagens")
     public Linguagem atualizarLinguagem(@RequestBody Linguagem linguagem) {
         Linguagem linguagemSalva = repositorio.save(linguagem);
         return linguagemSalva;
     }
     
-    @DeleteMapping(value = "/linguagem/{id}", produces = "application/text")
+    @DeleteMapping(value = "/linguagens/{id}", produces = "application/text")
     public void apagarLinguagemNome(@PathVariable(value = "id") String id) {
         repositorio.deleteById(id);
     }
