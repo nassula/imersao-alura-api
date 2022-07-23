@@ -8,7 +8,7 @@ public class ImersaoAluraApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ImersaoAluraApiApplication.class, args);
-		System.out.println("Olá mundo");
+		System.out.println("Servidor online!");
 	}
 
 }
